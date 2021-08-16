@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import DehazeOutlinedIcon from '@material-ui/icons/DehazeOutlined';
 import AlarmOnOutlinedIcon from '@material-ui/icons/AlarmOnOutlined';
 import DashboardOutlinedIcon from '@material-ui/icons/DashboardOutlined';
@@ -18,104 +19,115 @@ import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
 export const SideMenu = ({ appName="Perfectdai"}) => {
   return(
+    <div>
     <div className="sidebar">
       <div className="logo_content">
         <div className="logo">
-          <AlarmOnOutlinedIcon />
+          <AlarmOnOutlinedIcon className="icon_i"/>
           <div className="logo_name">{appName}</div>
         </div>
-        <DehazeOutlinedIcon />
+        <DehazeOutlinedIcon className="btn"/>
       </div>
       <ul className="nav_list">
         <li>
           <a href="#">
-            <SearchOutlinedIcon />
+            <SearchOutlinedIcon className="search_icon"/>
             <input type="text" placeholder="Search" />
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Search</span>
         </li>
         <li>
           <a href="#">
-            <DashboardOutlinedIcon />
+            <DashboardOutlinedIcon className="icon_i"/>
             <span className="links_name">Dashboard</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Dashboard</span>
         </li>
         <li>
           <a href="#">
-            <TodayOutlinedIcon />
+            <TodayOutlinedIcon className="icon_i"/>
             <span className="links_name">Appointments</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Appointments</span>
         </li>
         <li>
           <a href="#">
-            <SupervisorAccountOutlinedIcon />
+            <SupervisorAccountOutlinedIcon className="icon_i"/>
             <span className="links_name">Employees</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Employees</span>
         </li>
         <li>
           <a href="#">
-            <AccountTreeOutlinedIcon />
+            <AccountTreeOutlinedIcon className="icon_i"/>
             <span className="links_name">Resources</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Resources</span>
         </li>
         <li>
           <a href="#">
-            <RoomServiceOutlinedIcon />
+            <RoomServiceOutlinedIcon className="icon_i"/>
             <span className="links_name">Services</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Services</span>
         </li>
         <li>
           <a href="#">
-            <InsertChartOutlinedRoundedIcon />
+            <InsertChartOutlinedRoundedIcon className="icon_i"/>
             <span className="links_name">Inventories</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Inventories</span>
         </li>
         <li>
           <a href="#">
-            <LocalOfferOutlinedIcon />
+            <LocalOfferOutlinedIcon className="icon_i"/>
             <span className="links_name">Products</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Products</span>
         </li>
         <li>
           <a href="#">
-            <StorefrontOutlinedIcon />
+            <StorefrontOutlinedIcon className="icon_i"/>
             <span className="links_name">Branches</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Branches</span>
         </li>
         <li>
           <a href="#">
-            <BusinessOutlinedIcon />
+            <BusinessOutlinedIcon className="icon_i"/>
             <span className="links_name">Franchisees</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Franchisees</span>
         </li>
         <li>
           <a href="#">
-            <SettingsOutlinedIcon />
+            <SettingsOutlinedIcon className="icon_i"/>
             <span className="links_name">Settings</span>
           </a>
-          {/* <span class="tooltip">Dashboard</span> */}
+          <span className="tooltip">Settings</span>
         </li>
       </ul>
       <div className="profile_content">
         <div className="profile">
           <div className="profile_details">
-            <AccountCircleOutlinedIcon />
+            <Image
+              src={"/Alfonso_Zamudio_face.jpeg"}
+              alt="Picture of the user"
+              width={40}
+              height={40}
+              className="img_user"
+            />
             <div className="name_job">
               <div className="name">Alfonso Zamudio</div>
               <div className="job">General Manager</div>
             </div>
-            <span id="log_out"><ExitToAppOutlinedIcon /></span>
+            <span id="log_out"><ExitToAppOutlinedIcon className="icon_i"/></span>
           </div>
         </div>
+      </div>
+    </div>
+      <div className="home_content">
+        <div className="text">Home Content</div>
       </div>
     </div>
   )
