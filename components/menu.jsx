@@ -1,4 +1,9 @@
-import React from 'react'
+
+/* TO do: 
+1.- desapear menu when mobile 
+2.-scroll down when many items*/
+
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import DehazeOutlinedIcon from '@material-ui/icons/DehazeOutlined';
@@ -17,21 +22,37 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
+
 export const SideMenu = ({ appName="Perfectdai"}) => {
+  const [menuState, setMenuState] = useState(false)
+  const [menuClass, setMenuClass] = useState('')
+
+  const menuToogle = () => {
+    setMenuState(!menuState)
+    menuState ? setMenuClass('active') : setMenuClass('')
+  }
+
+  const searchToogle = () => {
+    if(menuState){
+      setMenuState(!menuState) 
+      setMenuClass('active')
+    } 
+  }
+
   return(
     <div>
-    <div className="sidebar">
+    <div className= {`sidebar ${menuClass}`}>
       <div className="logo_content">
         <div className="logo">
           <AlarmOnOutlinedIcon className="icon_i"/>
           <div className="logo_name">{appName}</div>
         </div>
-        <DehazeOutlinedIcon className="btn"/>
+        <DehazeOutlinedIcon onClick={menuToogle} className="btn"/>
       </div>
       <ul className="nav_list">
         <li>
           <a href="#">
-            <SearchOutlinedIcon className="search_icon"/>
+            <SearchOutlinedIcon onClick={searchToogle} className="search_icon"/>
             <input type="text" placeholder="Search" />
           </a>
           <span className="tooltip">Search</span>
@@ -121,14 +142,15 @@ export const SideMenu = ({ appName="Perfectdai"}) => {
               <div className="name">Alfonso Zamudio</div>
               <div className="job">General Manager</div>
             </div>
-            <span id="log_out"><ExitToAppOutlinedIcon className="icon_i"/></span>
           </div>
+          <span id="log_out"><ExitToAppOutlinedIcon className="icon_i"/></span>
         </div>
       </div>
     </div>
       <div className="home_content">
         <div className="text">Home Content</div>
       </div>
+
     </div>
   )
 }
