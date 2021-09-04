@@ -21,6 +21,9 @@ import BusinessOutlinedIcon from '@material-ui/icons/BusinessOutlined';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import { MyCalendar } from './calendar';
+
+
 
 
 export const SideMenu = ({ appName="Perfectdai"}) => {
@@ -149,7 +152,10 @@ export const SideMenu = ({ appName="Perfectdai"}) => {
     </div>
       <div className="home_content">
         <div className="text">Home Content</div>
+        <MyCalendar/>
       </div>
+
+      
 
     </div>
   )
