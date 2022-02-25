@@ -26,7 +26,9 @@ import { MyCalendar } from './calendar';
 
 
 
+
 export const SideMenu = ({ appName="Perfectdai"}) => {
+  
   const [menuState, setMenuState] = useState(false)
   const [menuClass, setMenuClass] = useState('')
 
@@ -80,6 +82,13 @@ export const SideMenu = ({ appName="Perfectdai"}) => {
             <span className="links_name">Employees</span>
           </a>
           <span className="tooltip">Employees</span>
+        </li>
+        <li>
+          <a href="/customer">
+            <AccountCircleOutlinedIcon className="icon_i"/>
+            <span className="links_name">Customer</span>
+          </a>
+          <span className="tooltip">Customer</span>
         </li>
         <li>
           <a href="#">

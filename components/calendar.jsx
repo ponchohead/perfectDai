@@ -34,8 +34,9 @@ export const MyCalendar = props => (
       defaultView="month"
       events={myEventsList}
       localizer={localizer}
-      resizable
-      style={{ height: "100vh" }}
+      resizable={true}
+      selectable={true}
+      style={{ height: "90vh" }}
     />    
 
    
